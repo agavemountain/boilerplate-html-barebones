@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!-- Ye Olde Build Script
+     Written by Joe Turner <joe@agavemountain.com>
+     Copyright (C) 2012 Joe Turner
+ -->
+<project name="boilerplate-html-build" default="usage" basedir="../">
+    
+    
+   
+    
+    <target name="usage" description="Kindly inform the developer about the proper usage commands.">
+        <echo message="====================================================================="/>
+        <echo message="Usage: ant <target>, where the targets are: "/>
+        <echo message=" "/>
+        <echo message="  help       - this message."/>
+        <echo message="  clean      - delete output files and clean up directories." />
+        <echo message="  debug      - build entire website, without compression or minification." />
+        <echo message="  release    - clean, and build a compressed, minified release build." />
+        <echo message=" "/>
+        <echo message="====================================================================="/>
+        <echo message=" "/>
+        <echo message=" "/>
+    </target>
+</project>
