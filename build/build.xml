@@ -5,12 +5,16 @@
  -->
 <project name="boilerplate-html-build" default="usage" basedir="../">
     
-    
-   
+    <!-- load property files.  This build script is not to be edited.  It was designed
+         to be reused over and over again in a variety of projects.  The website.properties
+         file contains all of the user editable configuration variables used throughout
+         this script.
+          -->
+    <property file="build/website.properties"/>
     
     <target name="usage" description="Kindly inform the developer about the proper usage commands.">
         <echo message="====================================================================="/>
-        <echo message="Usage: ant <target>, where the targets are: "/>
+        <echo message="Usage: ant [target], where valid targets are: "/>
         <echo message=" "/>
         <echo message="  help       - this message."/>
         <echo message="  clean      - delete output files and clean up directories." />
@@ -18,7 +22,8 @@
         <echo message="  release    - clean, and build a compressed, minified release build." />
         <echo message=" "/>
         <echo message="====================================================================="/>
-        <echo message=" "/>
+        <echo message="  website:   ${website.name}"/>
+        <echo message="  source :   ${dir.source}"/>
         <echo message=" "/>
     </target>
 </project>
