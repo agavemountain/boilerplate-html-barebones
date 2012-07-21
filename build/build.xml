@@ -12,7 +12,32 @@
           -->
     <property file="build/website.properties"/>
     
-    <target name="usage" description="Kindly inform the developer about the proper usage commands.">
+    <target name="clean" description="clean release directory.">
+        <echo message="cleaning: ${dir.release}" />
+        
+        <!-- Delete anything in the output directory. -->
+        <delete includeEmptyDirs="true">
+            <fileset dir="${dir.release}">
+                <include name="**/*" />
+            </fileset>
+        </delete>
+        
+        <!--  delete the release tarball (if exists). -->
+        <delete file="${dir.release}.tar.gz" />
+    </target>
+
+    <!-- Copy from the source directory to the output directory. -->
+    <target name="basic-copy">
+        <copy todir="${dir.release}">
+            <fileset dir="${dir.source}" includes="**"/>
+        </copy>
+    </target>
+    
+    <target name="debug" depends="basic-copy">
+        <echo message="building debug version..." />
+    </target>
+    
+    <target name="help" description="Kindly inform the developer about the proper usage commands.">
         <echo message="====================================================================="/>
         <echo message="Usage: ant [target], where valid targets are: "/>
         <echo message=" "/>
